@@ -14,8 +14,7 @@ public class Main {
 
         ExchangeRate exchangeRate = openExchangeRatesApi.getExchangeRate("3228872d4dd44f5586fcf046accad6c4", "USD,JPY,EUR");
 
+        System.out.println(exchangeRate.getRates().entrySet());
 
-
-        System.out.println(exchangeRate.toString());
     }
 }
