@@ -2,9 +2,9 @@ package org.larbcorp;
 
 import feign.Feign;
 import feign.jackson.JacksonDecoder;
-import org.larbcorp.OpenExchangeRatesApiService.ExchangeRate;
-import org.larbcorp.OpenExchangeRatesApiService.OpenExchangeRatesApi;
-import org.larbcorp.OpenGifsApiService.GiphyApiClient;
+import org.larbcorp.models.ExchangeRate;
+import org.larbcorp.ExchangeRatesApiService.ExchangeRatesApiClient;
+import org.larbcorp.GifsApiService.GiphyApiClient;
 
 import java.util.Map;
 
@@ -12,12 +12,12 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
-        OpenExchangeRatesApi openExchangeRatesApi = Feign.builder()
+        ExchangeRatesApiClient exchangeRatesApiClient = Feign.builder()
                 .decoder(new JacksonDecoder())
-                .target(OpenExchangeRatesApi.class, "https://openexchangerates.org");
+                .target(ExchangeRatesApiClient.class, "https://openexchangerates.org");
 
-        ExchangeRate exchangeRate = openExchangeRatesApi.getExchangeRate("3228872d4dd44f5586fcf046accad6c4", "EUR", "2022-02-12");
-        ExchangeRate exchangeRateYesterday = openExchangeRatesApi.getExchangeRate("3228872d4dd44f5586fcf046accad6c4", "EUR", "2022-02-11");
+        ExchangeRate exchangeRate = exchangeRatesApiClient.getExchangeRate("3228872d4dd44f5586fcf046accad6c4", "EUR", "2022-02-12");
+        ExchangeRate exchangeRateYesterday = exchangeRatesApiClient.getExchangeRate("3228872d4dd44f5586fcf046accad6c4", "EUR", "2022-02-11");
 
         System.out.println(exchangeRate.getRates().values().stream().findFirst().orElseThrow());
 
@@ -33,7 +33,7 @@ public class Main {
         @SuppressWarnings("unchecked")
         Map<String, Object> data = (Map<String, Object>) response.get("data");
 
-        System.out.println(data);
+        System.out.println(response);
 
         System.out.println("Random GIF URL: " + data.get("url"));
     }

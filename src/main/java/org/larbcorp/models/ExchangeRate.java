@@ -1,4 +1,4 @@
-package org.larbcorp.OpenExchangeRatesApiService;
+package org.larbcorp.models;
 
 import lombok.Data;
 import java.util.Map;
