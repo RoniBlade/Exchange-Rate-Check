@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Exchange-Rate-Check.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Exchange-Rate-Check.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.example.Exchange-Rate-Check.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.example.Exchange-Rate-Check.main.iml" />
     </modules>
   </component>
 </project>
