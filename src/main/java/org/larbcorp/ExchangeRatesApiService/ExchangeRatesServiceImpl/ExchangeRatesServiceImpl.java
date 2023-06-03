@@ -6,7 +6,6 @@ import org.larbcorp.ExchangeRatesApiService.ExchangeRatesApiClient;
 import org.larbcorp.ExchangeRatesApiService.ExchangeRatesService;
 import org.larbcorp.models.ExchangeRate;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class ExchangeRatesServiceImpl implements ExchangeRatesService {
@@ -18,7 +17,7 @@ public class ExchangeRatesServiceImpl implements ExchangeRatesService {
         .decoder(new JacksonDecoder())
         .target(ExchangeRatesApiClient.class, "https://openexchangerates.org");
 
-    public Integer CurComparison(String currencyName) {
+    public String CurComparison(String currencyName) {
 
         ExchangeRate exchangeRate = exchangeRatesApiClient.
             getTodayExchangeRate("3228872d4dd44f5586fcf046accad6c4",
@@ -31,18 +30,17 @@ public class ExchangeRatesServiceImpl implements ExchangeRatesService {
 
         double yesterdayExchangeRateValue = exchangeRateYesterday.getRates().values().stream().findFirst().orElseThrow();
         double exchangeRateValue = exchangeRate.getRates().values().stream().findFirst().orElseThrow();
-
-
-        System.out.println(yesterdayExchangeRateValue + " yesterdayExchangeRateValue");
-        System.out.println(exchangeRateValue + " exchangeRateValue");
+//
+//        System.out.println(yesterdayExchangeRateValue + " yesterdayExchangeRateValue");
+//        System.out.println(exchangeRateValue + " exchangeRateValue");
 
 
         if(exchangeRateValue > yesterdayExchangeRateValue)
-            return 1;
+            return "rich";
         if(exchangeRateValue < yesterdayExchangeRateValue)
-            return -1;
+            return "broke";
         if(exchangeRateValue == yesterdayExchangeRateValue)
-            return 0;
+            return "rich";
 
         return null;
     }
