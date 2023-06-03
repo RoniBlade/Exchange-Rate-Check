@@ -11,8 +11,8 @@
     function showGif() {
     var gifUrl = "" + "${gifUrl}";
     var gifContainer = document.getElementById("gifContainer");
-    gifContainer.innerHTML = '<img src="' + gifUrl + '" alt="Гифка">';
-}
+    gifContainer.innerHTML = '<iframe src="' + gifUrl + '" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>';
+   }
   </script>
 
 </body>
