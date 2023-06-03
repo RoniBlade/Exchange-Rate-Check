@@ -16,6 +16,7 @@ public class MainServiceImpl implements MainService {
 
 
     GifApiServiceImpl gifApiService = new GifApiServiceImpl();
+
     @Override
     public String getUrl(String currency) {
 
@@ -26,14 +27,10 @@ public class MainServiceImpl implements MainService {
         System.out.println("getGifUrl " + url);
         String finalUrl = "https://giphy.com/embed/" + Arrays.stream(url.split("-"))
                 .reduce((first, second) -> second)
-                .orElse("") ;
+                .orElse("");
         System.out.println("finalUrl " + finalUrl);
 //<iframe src="https://giphy.com/embed/ZFVgQPkTmtV05vQ8Et" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/NamasteCar-design-lamborghini-huracan-ZFVgQPkTmtV05vQ8Et">via GIPHY</a></p>
         return finalUrl;
 
     }
-
-
-
-
 }
