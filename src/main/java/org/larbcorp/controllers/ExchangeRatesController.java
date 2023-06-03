@@ -1,13 +1,9 @@
 package org.larbcorp.controllers;
 
-import ch.qos.logback.core.model.Model;
 import lombok.RequiredArgsConstructor;
 import org.larbcorp.models.ExchangeRate;
 import org.larbcorp.services.impl.MainServiceImpl;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 import java.util.ArrayList;
 import java.util.List;

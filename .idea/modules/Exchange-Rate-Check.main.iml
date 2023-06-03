@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="4">
   <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/../../out/production/Exchange-Rate-Check.main" />
-    <output-test url="file://$MODULE_DIR$/../../out/test/Exchange-Rate-Check.main" />
-    <exclude-output />
-    <content url="file://$MODULE_DIR$/../../build/generated/sources/annotationProcessor/java/main">
-      <sourceFolder url="file://$MODULE_DIR$/../../build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
+    <content url="file://$MODULE_DIR$/../../src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/main/resources" type="java-resource" />
     </content>
-<<<<<<< HEAD
-=======
-    <orderEntry type="sourceFolder" forTests="false" />
->>>>>>> c81b9e1334f64f8dc27099160d8de745db1e93db
   </component>
 </module>

@@ -5,8 +5,8 @@ import feign.jackson.JacksonDecoder;
 import org.larbcorp.ExchangeRatesApiService.ExchangeRatesApiClient;
 import org.larbcorp.ExchangeRatesApiService.ExchangeRatesService;
 import org.larbcorp.models.ExchangeRate;
-//import
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class ExchangeRatesServiceImpl implements ExchangeRatesService {
