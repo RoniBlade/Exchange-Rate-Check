@@ -7,18 +7,21 @@ import org.larbcorp.ExchangeRatesApiService.ExchangeRatesServiceImpl.ExchangeRat
 import org.larbcorp.models.ExchangeRate;
 import org.larbcorp.ExchangeRatesApiService.ExchangeRatesApiClient;
 import org.larbcorp.GifsApiService.GiphyApiClient;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.time.LocalDate;
 import java.util.Map;
 
-
+@SpringBootApplication
 public class Main {
     public static void main(String[] args) {
 
+        SpringApplication.run(Main.class, args);
 
-        ExchangeRatesServiceImpl exchangeRatesService = new ExchangeRatesServiceImpl();
+//        ExchangeRatesServiceImpl exchangeRatesService = new ExchangeRatesServiceImpl();
 
-        System.out.println(exchangeRatesService.CurComparison("USD"));
+//        System.out.println(exchangeRatesService.CurComparison("USD"));
 
 //        System.out.println(exchangeRate.getRates().values().stream().findFirst().orElseThrow());
 
