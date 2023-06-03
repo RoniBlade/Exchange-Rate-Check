@@ -1,6 +1,8 @@
 package org.larbcorp.controllers;
 
+import ch.qos.logback.core.model.Model;
 import lombok.RequiredArgsConstructor;
+<<<<<<< HEAD
 import org.larbcorp.models.ExchangeRate;
 import org.larbcorp.services.impl.MainServiceImpl;
 import org.springframework.stereotype.Controller;
@@ -12,10 +14,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.ArrayList;
 import java.util.List;
 
+=======
+import org.larbcorp.services.impl.MainServiceImpl;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+>>>>>>> c81b9e1334f64f8dc27099160d8de745db1e93db
 @Controller
 @RequiredArgsConstructor
 public class ExchangeRatesController {
 
+<<<<<<< HEAD
     @GetMapping("/")
     public String showCurrencyForm(Model model) {
         List<String> currencies = new ArrayList<>();
@@ -34,4 +43,14 @@ public class ExchangeRatesController {
 //    }
 
 
+=======
+    private final MainServiceImpl usersService;
+
+    @GetMapping("/")
+    public String getUsersPage(Model model) {
+//        model.addAttribute("users", usersService.getAllRates());
+        return "Users/users_page";
+    }
+
+>>>>>>> c81b9e1334f64f8dc27099160d8de745db1e93db
 }

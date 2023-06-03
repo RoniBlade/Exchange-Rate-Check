@@ -23,6 +23,7 @@ public class Main {
 
 //        System.out.println(exchangeRatesService.CurComparison("USD"));
 
+
 //        System.out.println(exchangeRate.getRates().values().stream().findFirst().orElseThrow());
 
 //        GiphyApiClient giphyApiClient = Feign.builder()
