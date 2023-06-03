@@ -6,6 +6,8 @@ import org.larbcorp.GifsApiService.GifApiServiceImpl.GifApiServiceImpl;
 import org.larbcorp.services.MainService;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+
 @RequiredArgsConstructor
 @Service
 public class MainServiceImpl implements MainService {
@@ -22,8 +24,12 @@ public class MainServiceImpl implements MainService {
         String url = gifApiService.getGifUrl(value);
 
         System.out.println("getGifUrl " + url);
-
-        return url;
+        String finalUrl = "https://giphy.com/embed/" + Arrays.stream(url.split("-"))
+                .reduce((first, second) -> second)
+                .orElse("") ;
+        System.out.println("finalUrl " + finalUrl);
+//<iframe src="https://giphy.com/embed/ZFVgQPkTmtV05vQ8Et" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/NamasteCar-design-lamborghini-huracan-ZFVgQPkTmtV05vQ8Et">via GIPHY</a></p>
+        return finalUrl;
 
     }
 
