@@ -33,7 +33,22 @@ public class MainServiceImpl implements MainService {
 
     }
 
+    @Override
+    public String getTestData(String currency) {
 
+        String value = exchangeRatesService.CurComparison(currency);
 
+        String url = gifApiService.getGifUrl(value);
+
+        System.out.println("getGifUrl " + url);
+
+        if (url.contains("rich")) {
+            return "rich";
+        } else if (url.contains("broke")){
+            return "broke";
+        }
+        else return null;
+
+    }
 
 }

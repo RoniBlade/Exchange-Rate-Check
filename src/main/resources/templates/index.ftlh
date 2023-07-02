@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Выбор валюты</title>
+    <link rel='stylesheet' href='css/style.css'>
 </head>
 <body>
 <h2>Выберите валюту:</h2>
