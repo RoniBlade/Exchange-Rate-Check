@@ -4,5 +4,6 @@ public interface MainService {
 
     public String getUrl(String currency);
 
+    String getTestData(String currency);
 
 }
